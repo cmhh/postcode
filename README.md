@@ -123,9 +123,9 @@ addr_w_postcode <- sf::st_read(
 )
 ```
 
-# Approximating postcode with meshblocks
+## Approximating postcode with meshblocks
 
-Postcodes were created by NZ Post, to satisfy their own business requirements.  An interesting idea is to create something like postcode by aggregating existing standard geographic units in an attempt to make something a little more consistent (better consistency would be achieved, of course, if this was done without letting postcodes span more than a single territorial authority).  
+Postcodes were created by NZ Post, to satisfy their own business requirements.  An interesting idea is to create something like postcode by aggregating existing standard geographic units in an attempt to make something a little more consistent with official geographies (better consistency would be achieved, of course, if this was done without letting postcodes span more than a single territorial authority).  
 
 Either way, We can do this by first intersecting the postcode and meshblock layers.  Assuming again we have a database connection, `conn`, this can be done all in R as follows:
 
