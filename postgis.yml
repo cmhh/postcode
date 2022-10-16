@@ -1,0 +1,21 @@
+version: "3.5"
+services:
+  postgis:
+    image: "postgis"
+    container_name: postgis
+    build:
+      context: ./
+      dockerfile: ./docker/postgis/Dockerfile
+    ports:
+      - 5432:5432
+    environment:
+      - "POSTGRES_PASSWORD=${PG_PASS}"
+    networks:
+      - postgisnet
+    volumes:
+      - postgisdata:/var/lib/postgresql/13/main
+      - ./data:/data
+networks:
+  postgisnet:
+volumes:
+  postgisdata:

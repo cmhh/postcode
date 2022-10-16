@@ -1,0 +1,11 @@
+version: "3.5"
+services:
+  postcodegpkg:
+    image: "postcodegpkg"
+    container_name: postcodegpkg
+    build:
+      context: ./
+      dockerfile: ./docker/postcodegpkg/Dockerfile
+    user: ${UID}:${GID}
+    volumes:
+      - ./data:/data
